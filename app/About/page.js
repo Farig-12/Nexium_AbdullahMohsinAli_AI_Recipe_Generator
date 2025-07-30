@@ -14,7 +14,7 @@ const About = () => {
           </p>
 
           <p>
-            At the heart of Cook-It! is a powerful AI engine that generates unique recipes based on ingredients <strong>you already have.</strong> Just enter what's in your kitchen, and Cook-It! will suggest creative, tasty recipes in seconds.
+            At the heart of Cook-It! is a powerful AI engine that generates unique recipes based on ingredients <strong>you already have.</strong> Just enter what is in your kitchen, and Cook-It! will suggest creative, tasty recipes in seconds.
           </p>
 
           <p>
@@ -22,7 +22,7 @@ const About = () => {
           </p>
 
           <p>
-            Whether you're a beginner or an aspiring chef, Cook-It! helps you explore the joy of cooking while learning about AI and modern web development.
+            Whether you are a beginner or an aspiring chef, Cook-It! helps you explore the joy of cooking while learning about AI and modern web development.
           </p>
 
           <p className="text-center text-white/70 italic mt-10">

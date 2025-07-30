@@ -10,7 +10,7 @@ const ContactUs = () => {
 
         <div className="max-w-3xl mx-auto text-lg leading-relaxed space-y-6">
           <p>
-            We'd love to hear from you - whether it's feedback, suggestions, or just a hello!
+            We would love to hear from you - whether it is feedback, suggestions, or just a hello!
           </p>
 
           <p>
@@ -31,14 +31,14 @@ const ContactUs = () => {
           </div>
 
           <p className="text-center text-white/60 italic mt-10">
-            "From idea to innovation - we're cooking up something awesome."
+            "From idea to innovation - we are cooking up something awesome."
           </p>
         </div>
       </div>
 
       <div className="fixed z-30 top-[32rem] left-5">
         <Link href="/" passHref>
-          <div className="flex items-center gap-2 shadow-xl rounded-xl px-4 py-2 w-fit cursor-pointer hover:shadow-2xl bg-gradient-to-r from-black/40 to-red-600 hover:from-red-600 hover:to-black/40 hover:scale-105 transition-transform transition-colors duration-300 ease-in-out">
+          <div className="flex items-center gap-2 shadow-xl rounded-xl px-4 py-2 w-fit cursor-pointer hover:shadow-2xl bg-gradient-to-r from-black/40 to-red-600 hover:from-red-600 hover:to-black/40 hover:scale-105 transition-colors duration-300 ease-in-out">
             <ArrowLeft className="text-white" />
               <span className="text-white font-medium text-lg">Back</span>
           </div>

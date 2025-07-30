@@ -276,7 +276,7 @@ export default function Home() {
 
         <div className="flex flex-col items-center">
           <img src="/images/timer.png" className="h-32 animate-float delay-300 drop-shadow-xl" alt="Timer" />
-          <p className="mt-3 text-center text-lg font-mono ">Time your steps - don't overcook</p>
+          <p className="mt-3 text-center text-lg font-mono ">Time your steps - do not overcook</p>
         </div>
 
         <div className="flex flex-col items-center">
