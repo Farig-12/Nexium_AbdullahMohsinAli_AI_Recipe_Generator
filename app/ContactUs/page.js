@@ -31,7 +31,7 @@ const ContactUs = () => {
           </div>
 
           <p className="text-center text-white/60 italic mt-10">
-            "From idea to innovation - we are cooking up something awesome."
+            {'"From idea to innovation - we are cooking up something awesome."'}
           </p>
         </div>
       </div>

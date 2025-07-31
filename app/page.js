@@ -286,7 +286,7 @@ export default function Home() {
       </div>
 
       <p className="mt-10 text-center text-xl font-light italic text-white/60">
-        "Anyone can cook, but only the fearless can be great." - Gusteau
+        {'"Anyone can cook, but only the fearless can be great." - Gusteau'}
       </p>
     </div>
 

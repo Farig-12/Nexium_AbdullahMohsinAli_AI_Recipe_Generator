@@ -26,7 +26,7 @@ const About = () => {
           </p>
 
           <p className="text-center text-white/70 italic mt-10">
-            "Good food starts with good ideas — and now, good AI."
+            {'"Good food starts with good ideas — and now, good AI."'}
           </p>
         </div>
       </div>
