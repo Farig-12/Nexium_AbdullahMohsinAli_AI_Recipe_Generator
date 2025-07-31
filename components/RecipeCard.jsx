@@ -82,7 +82,7 @@ export default function RecipeCard({ recipes, onDelete, onRemove }) {
 
   if (!recipes || recipes.length === 0) {
     return (<div className="flex flex-col items-center">
-              <Image src="/images/chef-looking.png" alt="Chef" className="h-80 drop-shadow-2xl" />
+              <img src="/images/chef-looking.png" alt="Chef" className="h-80 drop-shadow-2xl" />
               <span className="font-medium text-3xl">No Recipes Found!</span>
             </div>);
   }
@@ -151,7 +151,7 @@ export default function RecipeCard({ recipes, onDelete, onRemove }) {
 
               {/* Chef Image */}
               <div className="flex flex-col items-center justify-center bg-gradient-to-r from-red-500 to-yellow-400">
-                    <Image
+                    <img
                       src="/images/chef-smelling.png"
                       alt="Chef"
                       className="w-64 h-auto rounded-xl drop-shadow-xl -translate-y-2"
