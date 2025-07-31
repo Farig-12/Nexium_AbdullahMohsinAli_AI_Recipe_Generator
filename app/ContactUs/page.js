@@ -24,8 +24,8 @@ const ContactUs = () => {
             </div>
             <div>
               <span className="font-semibold">🔗 GitHub:</span>
-              <a href="https://github.com/your-repo-url" target="_blank" className="underline text-white hover:text-gray-400">
-                github.com/your-repo-url
+              <a href="https://github.com/Farig-12" target="_blank" className="underline text-white hover:text-gray-400">
+                github.com/Farig-12
               </a>
             </div>
           </div>

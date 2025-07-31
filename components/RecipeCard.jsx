@@ -150,11 +150,11 @@ export default function RecipeCard({ recipes, onDelete, onRemove }) {
               </button>
 
               {/* Chef Image */}
-              <div className="flex flex-col items-center justify-center bg-gradient-to-r from-red-500 to-yellow-400">
+              <div className="flex flex-col items-center rounded-xl justify-center bg-gradient-to-r from-red-500 to-yellow-400">
                     <img
                       src="/images/chef-smelling.png"
                       alt="Chef"
-                      className="w-64 h-auto rounded-xl drop-shadow-xl -translate-y-2"
+                      className="w-64 h-auto drop-shadow-xl -translate-y-2"
                     />
                     <p className="text-center mt-4 font-semibold text-white font-mono text-2xl -translate-y-7">
                       Chef Gusteau's Kitchen!

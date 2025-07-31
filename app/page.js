@@ -176,11 +176,11 @@ export default function Home() {
                   </button>
 
                   {/* Chef Image */}
-                  <div className="flex flex-col items-center justify-center bg-gradient-to-r from-red-500 to-yellow-400">
+                  <div className="flex flex-col items-center rounded-xl justify-center bg-gradient-to-r from-red-500 to-yellow-400">
                     <img
                       src="/images/chef-smelling.png"
                       alt="Chef"
-                      className="w-64 h-auto rounded-xl drop-shadow-xl -translate-y-2"
+                      className="w-64 h-auto drop-shadow-xl -translate-y-2"
                     />
                     <p className="text-center mt-4 font-semibold text-white font-mono text-2xl -translate-y-7">
                       Chef Gusteau’s Kitchen!
@@ -262,51 +262,52 @@ export default function Home() {
       </div>
 
       <div className="bg-gradient-to-r from-amber-700 to-red-700 min-h-screen text-white px-6 py-10">
-      <p className="text-[4rem] logo-font font-medium ml-[20rem]">
-        Become a Chef 
-        <span className="text-[4rem] logo-font ml-8">
-          {isloggedin ? userName : <Link href="/Signup"> Sign Up!</Link>}
-        </span>
-      </p>
+          <p className="text-[2.5rem] sm:text-[3rem] md:text-[4rem] logo-font font-medium text-center md:text-left md:ml-[8rem] lg:ml-[20rem]">
+            Become a Chef 
+            <span className="block sm:inline text-[2.5rem] sm:text-[3rem] md:text-[4rem] logo-font sm:ml-4 md:ml-8">
+              {isloggedin ? userName : <Link href="/Signup"> Sign Up!</Link>}
+            </span>
+          </p>
 
-      {/* Tips Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center mt-8 px-6">
+          {/* Tips Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center mt-8 px-2 sm:px-6">
 
-        <div className="flex flex-col items-center">
-          <img src="/images/utensils.png" className="h-32 animate-float drop-shadow-xl" alt="Utensils" />
-          <p className="mt-3 text-center text-lg font-mono ">Keep your tools clean & organized</p>
+            <div className="flex flex-col items-center">
+              <img src="/images/utensils.png" className="h-32 animate-float drop-shadow-xl" alt="Utensils" />
+              <p className="mt-3 text-center text-lg font-mono">Keep your tools clean & organized</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <img src="/images/ingredients.png" className="h-32 animate-float delay-100 drop-shadow-xl" alt="Ingredients" />
+              <p className="mt-3 text-center text-lg font-mono">Use fresh and seasonal ingredients</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <img src="/images/knife.png" className="h-32 animate-float delay-200 drop-shadow-xl" alt="Knife" />
+              <p className="mt-3 text-center text-lg font-mono">Master basic knife skills</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <img src="/images/tasting.png" className="h-32 animate-float delay-150 drop-shadow-xl" alt="Tasting" />
+              <p className="mt-3 text-center text-lg font-mono">Taste as you go - adjust flavors!</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <img src="/images/timer.png" className="h-32 animate-float delay-300 drop-shadow-xl" alt="Timer" />
+              <p className="mt-3 text-center text-lg font-mono">Time your steps - do not overcook</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <img src="/images/plate.png" className="h-32 animate-float delay-500 drop-shadow-xl" alt="Plating" />
+              <p className="mt-3 text-center text-lg font-mono">Presentation is key - plate beautifully</p>
+            </div>
+          </div>
+
+          <p className="mt-10 text-center text-xl font-light italic text-white/60">
+            {'"Anyone can cook, but only the fearless can be great." - Gusteau'}
+          </p>
         </div>
 
-        <div className="flex flex-col items-center">
-          <img src="/images/ingredients.png" className="h-32 animate-float delay-100 drop-shadow-xl" alt="Ingredients" />
-          <p className="mt-3 text-center text-lg font-mono ">Use fresh and seasonal ingredients</p>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <img src="/images/knife.png" className="h-32 animate-float delay-200 drop-shadow-xl" alt="Knife" />
-          <p className="mt-3 text-center text-lg font-mono ">Master basic knife skills</p>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <img src="/images/tasting.png" className="h-32 animate-float delay-150 drop-shadow-xl" alt="Tasting" />
-          <p className="mt-3 text-center text-lg font-mono ">Taste as you go - adjust flavors!</p>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <img src="/images/timer.png" className="h-32 animate-float delay-300 drop-shadow-xl" alt="Timer" />
-          <p className="mt-3 text-center text-lg font-mono ">Time your steps - do not overcook</p>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <img src="/images/plate.png" className="h-32 animate-float delay-500 drop-shadow-xl" alt="Plating" />
-          <p className="mt-3 text-center text-lg font-mono ">Presentation is key - plate beautifully</p>
-        </div>
-      </div>
-
-      <p className="mt-10 text-center text-xl font-light italic text-white/60">
-        {'"Anyone can cook, but only the fearless can be great." - Gusteau'}
-      </p>
-    </div>
 
 
     </>
