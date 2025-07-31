@@ -42,34 +42,44 @@ export default function Home() {
   }, [isloggedin]);
 
   const handlePrompt = async () => {
-    if(!isloggedin){
-      toast.error("Please log in first");
-      setPrompt("");
+  if (!isloggedin) {
+    toast.error("Please log in first");
+    setPrompt("");
+    return;
+  }
+
+  if (!prompt.trim()) return;
+
+  setIsLoading(true);
+
+  try {
+    const response = await fetch("https://farig-12.app.n8n.cloud/webhook/generate-recipe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ prompt })
+    });
+
+    const text = await response.text();
+
+    if (!text) {
+      toast.error("Gemini server is currently busy. Please try again shortly.");
       return;
     }
 
-    if (!prompt.trim()) return;
+    const result = JSON.parse(text);
+    setRecipe(result);
+    setPrompt("");
+  } catch (error) {
+    console.error("Error generating recipe:", error);
+    toast.error("Gemini server is currently busy. Please try again shortly.");
+    setPrompt("");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("https://farig-12.app.n8n.cloud/webhook/generate-recipe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ prompt })
-      });
-
-      const result = await response.json();
-      setRecipe(result);
-      setPrompt("");
-    } catch (error) {
-      console.error("Error generating recipe:", error);
-    }finally {
-      setIsLoading(false); 
-    }
-  };
 
   const handleSave = async () => {
 
