@@ -1,6 +1,6 @@
 # Cook-It
 
-Cook-It is a modern web application designed to help users discover, manage, and share recipes with ease. Built with Next.js and React, it features a sleek UI powered by Tailwind CSS and offers seamless user experiences with animations, notifications, and responsive design.
+Cook-It is a modern web application designed to help users discover, manage, and share recipes with ease. Built with Next.js and React, it features a sleek UI powered by Tailwind CSS and offers seamless user experiences with animations, notifications.
 
 ## AI Integration
 
