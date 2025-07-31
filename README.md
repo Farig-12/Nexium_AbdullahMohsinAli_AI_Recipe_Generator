@@ -1,3 +1,14 @@
+# Cook-It
+
+Cook-It is a modern web application designed to help users discover, manage, and share recipes with ease. Built with Next.js and React, it features a sleek UI powered by Tailwind CSS and offers seamless user experiences with animations, notifications, and responsive design.
+
+## AI Integration
+
+Cook-It leverages an AI agent integrated via [n8n](https://n8n.io/), an open-source workflow automation tool. The AI agent assists users by generating recipe suggestions, and providing personalized recommendations, enhancing the overall user experience with intelligent automation.
+
+---
+
+
 ## Project Libraries & Dependencies
 
 Below is a list of all libraries used in Cook-It, with a short explanation and the `pnpm` command to install each.
