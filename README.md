@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cook-It
 
-## Getting Started
+Cook-It is a modern web application designed to help users discover, manage, and share recipes with ease. Built with Next.js and React, it features a sleek UI powered by Tailwind CSS and offers seamless user experiences with animations, notifications.
 
-First, run the development server:
+## AI Integration
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Cook-It leverages an AI agent integrated via [n8n](https://n8n.io/), an open-source workflow automation tool. The AI agent assists users by generating recipe suggestions, and providing personalized recommendations, enhancing the overall user experience with intelligent automation.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Libraries & Dependencies
 
-## Learn More
+Below is a list of all libraries used in Cook-It, with a short explanation and the `pnpm` command to install each.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Core Libraries
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **next**  
+  The React framework for production, powering routing, SSR, and more.  
+  `pnpm add next`
 
-## Deploy on Vercel
+- **react**  
+  The core UI library for building user interfaces.  
+  `pnpm add react`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **react-dom**  
+  React package for working with the DOM.  
+  `pnpm add react-dom`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### UI & Styling
+
+- **tailwindcss**  
+  Utility-first CSS framework for rapid UI development.  
+  `pnpm add tailwindcss`
+
+- **tailwind-merge**  
+  Utility to intelligently merge Tailwind CSS classes.  
+  `pnpm add tailwind-merge`
+
+- **clsx**  
+  Utility for constructing `className` strings conditionally.  
+  `pnpm add clsx`
+
+- **class-variance-authority**  
+  Utility for managing complex className variants, often with Tailwind.  
+  `pnpm add class-variance-authority`
+
+- **framer-motion**  
+  Animation library for React, used for smooth UI transitions.  
+  `pnpm add framer-motion`
+
+- **lucide-react**  
+  Icon library providing beautiful SVG icons as React components.  
+  `pnpm add lucide-react`
+
+- **tw-animate-css**  
+  Adds animation utilities to Tailwind CSS.  
+  `pnpm add tw-animate-css`
+
+---
+
+### State & Context
+
+- **@radix-ui/react-slot**  
+  Utility for advanced component composition (slots) in React.  
+  `pnpm add @radix-ui/react-slot`
+
+---
+
+### Backend & Database
+
+- **mongoose**  
+  ODM for MongoDB, used for schema-based data modeling.  
+  `pnpm add mongoose`
+
+---
+
+### Auth & API
+
+- **@supabase/supabase-js**  
+  Client library for interacting with Supabase (auth, database, storage).  
+  `pnpm add @supabase/supabase-js`
+
+---
+
+### Notifications
+
+- **sonner**  
+  Modern toast notification library for React.  
+  `pnpm add sonner`
+
+---
+
+### Dev & Linting
+
+- **eslint**  
+  Linter for JavaScript/TypeScript code quality.  
+  `pnpm add -D eslint`
+
+- **eslint-config-next**  
+  Next.js ESLint config for best practices.  
+  `pnpm add -D eslint-config-next`
+
+- **@eslint/eslintrc**  
+  ESLint configuration utilities.  
+  `pnpm add -D @eslint/eslintrc`
+
+- **@tailwindcss/postcss**  
+  Tailwind plugin for PostCSS integration.  
+  `pnpm add -D @tailwindcss/postcss`
+
+---
+
+### Scripts
+
+- **dev**: `next dev --turbopack`  
+  Starts the development server.
+- **build**: `next build`  
+  Builds the production app.
+- **start**: `next start`  
+  Starts the production server.
+- **lint**: `next lint`  
+  Runs ESLint.
+
+---
+
+### How to Install All Dependencies
+
+To install all dependencies at once, simply run:
+
+```sh
+pnpm install
