@@ -8,6 +8,7 @@ const RecipeSchema = new mongoose.Schema({
   instructions: [String],
   userId: { type: String, required: true },      // Supabase UUID   
   favourite: { type: Boolean, default: false },  
+  calories: Number, 
 }, {
   timestamps: true,
   collection: "UserRecipes",

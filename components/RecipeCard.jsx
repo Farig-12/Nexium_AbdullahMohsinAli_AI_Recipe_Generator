@@ -1,6 +1,6 @@
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Clock, X, Timer, CookingPot, ShoppingBasket, Cross } from "lucide-react"
+import { Clock, X, Timer, CookingPot, ShoppingBasket, Cross, Zap } from "lucide-react"
 import { useState } from "react"
 import { toast } from "sonner"
 import { AnimatePresence, motion } from "framer-motion"
@@ -184,7 +184,14 @@ export default function RecipeCard({ recipes, onDelete, onRemove }) {
               <div className="flex flex-col justify-start text-black overflow-y-auto max-h-[80vh] p-4 scroll-transparent">
                 <h2 className="text-2xl font-bold mb-4">{isViewed.recipeName}</h2>
 
-                <p className="mb-2 flex gap-1"><Timer size={22}/> {isViewed.cookingTime}</p>
+                <p className="mb-2 flex items-center gap-10">
+                  <span className="flex items-center gap-1">
+                    <Timer size={20} /> {isViewed.cookingTime}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Zap size={20} color="limegreen" /> {isViewed.calories} kcal
+                  </span>
+                </p>
                 <p className="mb-4 flex flex-col gap-1"><strong className="flex gap-1">Health Tip <Cross size={22} color="red"/>:</strong> {isViewed.healthTip}</p>
 
                 <div className="mb-4">

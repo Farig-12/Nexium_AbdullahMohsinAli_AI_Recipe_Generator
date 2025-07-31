@@ -4,7 +4,7 @@ import UserRecipe from "@/models/Recipe"
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { recipeName, cookingTime, healthTip, ingredients, instructions, userId, favourite } = body;
+    const { recipeName, cookingTime, healthTip, ingredients, instructions, userId, favourite, calories } = body;
 
     if (!userId) {
       return new Response(JSON.stringify({ message: "Missing user ID" }), { status: 400 });
@@ -25,6 +25,7 @@ export async function POST(req) {
       instructions,
       userId,
       favourite,
+      calories,
     });
 
     return new Response(JSON.stringify(newRecipe), { status: 200 });

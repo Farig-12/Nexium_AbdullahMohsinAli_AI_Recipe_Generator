@@ -1,6 +1,6 @@
 "use client"
 
-import { UtensilsCrossed, X, Timer, Cross, CookingPot, ShoppingBasket } from "lucide-react"
+import { UtensilsCrossed, X, Timer, Cross, CookingPot, ShoppingBasket, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 import { useLoginContext } from "@/context"
@@ -186,7 +186,14 @@ export default function Home() {
                   <div className="flex flex-col justify-start text-black overflow-y-auto max-h-[80vh] py-4 scroll-transparent">
                     <h2 className="text-2xl font-bold mb-4">{recipe.recipeName}</h2>
 
-                    <p className="mb-2 flex gap-1"><Timer size={22}/> {recipe.cookingTime}</p>
+                    <p className="mb-2 flex items-center gap-10">
+                      <span className="flex items-center gap-1">
+                        <Timer size={20} /> {recipe.cookingTime}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Zap size={20} color="limegreen" /> {recipe.calories} kcal
+                      </span>
+                    </p>
                     <p className="mb-4 flex flex-col gap-1"><strong className="flex gap-1">Health Tip <Cross size={22} color="red"/>:</strong> {recipe.healthTip}</p>
 
                     <div className="mb-4">
