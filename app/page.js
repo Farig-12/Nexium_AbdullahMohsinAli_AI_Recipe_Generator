@@ -10,6 +10,7 @@ import { supabase } from "@/lib/SupabaseClient"
 import Loading from "@/components/Loading"
 import { AnimatePresence, motion } from "framer-motion"
 import ExamplePrompt from "@/components/ExamplePrompt"
+import Image from "next/image";
 
 
 export default function Home() {

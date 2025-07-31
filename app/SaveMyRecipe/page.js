@@ -6,7 +6,7 @@ import Loading from "@/components/Loading"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
-const SaveRecipe = () => {
+const SaveMyRecipe = () => {
 
    const [recipes, setRecipes] = useState([]);
    const [isLoading, setIsLoading] = useState(false);
@@ -74,4 +74,4 @@ const SaveRecipe = () => {
     )
 }
 
-export default SaveRecipe
+export default SaveMyRecipe
