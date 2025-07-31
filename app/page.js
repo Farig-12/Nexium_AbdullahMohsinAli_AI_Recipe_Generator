@@ -65,6 +65,7 @@ export default function Home() {
 
     if (!text) {
       toast.error("Gemini server is currently busy. Please try again shortly.");
+      setPrompt("");
       return;
     }
 
