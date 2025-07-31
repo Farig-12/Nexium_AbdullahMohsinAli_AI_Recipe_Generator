@@ -1,17 +1,19 @@
 "use client"
 
-import { ChefHat, User, X, LogOut } from "lucide-react"
+import { ChefHat, User, X, LogOut, Menu } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { supabase } from '@/lib/SupabaseClient'
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 import { useLoginContext } from "@/context"
+import { set } from "mongoose"
 
 
 const Navbar = () => {
   const [showProfileCard, setShowProfileCard] = useState(false);
   const {isloggedin, setIsloggedin} = useLoginContext();
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -36,6 +38,7 @@ const Navbar = () => {
   }, []);
 
   const handleRender = (e) => {
+    setShowMobileMenu(false);
     e.preventDefault();
 
     const path = e.currentTarget.getAttribute("data-path");
@@ -91,7 +94,6 @@ const Navbar = () => {
   }
 
 
-
   return (
     <>
       <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-4">
@@ -104,8 +106,18 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Navigation Links */}
-          <ul className={`flex ${isloggedin ? 'gap-10' : 'gap-4'} justify-between text-lg translate-y-[1px] font-medium text-gray-50`}>
+
+           {/* Mobile Navigation */}
+          <button
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+            className="md:hidden block text-white"
+          >
+            {showMobileMenu ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
+
+          {/* Desktop Navigation Links */}
+          <ul className={`hidden md:flex ${isloggedin ? 'gap-10' : 'gap-4'} justify-between text-lg translate-y-[1px] font-medium text-gray-50`}>
             <li>
               <Link href = "/About" className="relative cursor-pointer after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-gray-50 after:transition-all after:duration-300 hover:after:w-full">About Us</Link>
             </li>
@@ -121,18 +133,47 @@ const Navbar = () => {
           </ul>
 
           {/* User Login/Logout ; do ui changes in button */}
-          {!isloggedin && (<button onClick={() => setShowProfileCard(true)} className="hover:cursor-pointer flex gap-2 text-lg font-medium rounded-4xl px-3 py-1 bg-gradient-to-r from-black/40 to-red-600 hover:from-red-600 hover:to-black/40 hover:scale-105 transition-colors duration-300 ease-in-out shadow-lg">
+          <div className="hidden md:block">
+            {!isloggedin && (<button onClick={() => setShowProfileCard(true)} className="hover:cursor-pointer flex gap-2 text-lg font-medium rounded-4xl px-3 py-1 bg-gradient-to-r from-black/40 to-red-600 hover:from-red-600 hover:to-black/40 hover:scale-105 transition-colors duration-300 ease-in-out shadow-lg">
             <span className="mt-0.5">Login</span> <User size={32} />
-          </button>)}
-
-          {isloggedin && (<button
-              onClick={handleLogOut}
-              className="hover:cursor-pointer flex gap-2 text-lg font-medium rounded-4xl px-3 py-1 bg-gradient-to-r from-red-600 to-black/40 hover:from-black/40 hover:to-red-600 hover:scale-105 transition-colors duration-300 ease-in-out shadow-lg"
-            >
-              <span className="mt-0.5">Logout</span>
-              <LogOut size={30} className="text-gray-400" />
             </button>)}
+
+            {isloggedin && (<button
+                onClick={handleLogOut}
+                className="hover:cursor-pointer flex gap-2 text-lg font-medium rounded-4xl px-3 py-1 bg-gradient-to-r from-red-600 to-black/40 hover:from-black/40 hover:to-red-600 hover:scale-105 transition-colors duration-300 ease-in-out shadow-lg"
+              >
+                <span className="mt-0.5">Logout</span>
+                <LogOut size={30} className="text-gray-400" />
+              </button>)}
+          </div>
+
         </div>
+
+        {/* Mobile Buttons */}
+        {showMobileMenu && (
+          <div className="md:hidden mt-4 px-2 space-y-4 text-lg">
+            <Link href="/About" onClick={() => setShowMobileMenu(false)} className="block">About Us</Link>
+            {isloggedin && (
+              <Link href="/Favourite" onClick={handleRender} data-path="/Favourite" className="block">Favourite</Link>
+            )}
+            <Link href="/ContactUs" onClick={() => setShowMobileMenu(false)} className="block">Contact Us</Link>
+            {isloggedin && (
+              <Link href="/SaveMyRecipe" onClick={() => setShowMobileMenu(false)} className="block">My Recipes</Link>
+            )}
+
+            {!isloggedin ? (
+              <button onClick={() => { setShowProfileCard(true); setShowMobileMenu(false); }} className="w-full flex items-center hover:cursor-pointer gap-2 px-4 py-2 rounded-4xl bg-gradient-to-r from-black/40 to-red-600 hover:from-red-600 hover:to-black/40 hover:scale-105 transition-colors duration-300 ease-in-out shadow-lg">
+                <span>Login</span>
+                <User size={24} />
+              </button>
+            ) : (
+              <button onClick={handleLogOut} className="w-full flex items-center gap-2 px-4 py-2 rounded-4xl hover:cursor-pointer bg-gradient-to-r from-red-600 to-black/40 hover:from-black/40 hover:to-red-600 hover:scale-105 transition-colors duration-300 ease-in-out shadow-lg">
+                <span>Logout</span>
+                <LogOut size={24} />
+              </button>
+            )}
+          </div>
+        )}
       </div>
 
       {showProfileCard && (
