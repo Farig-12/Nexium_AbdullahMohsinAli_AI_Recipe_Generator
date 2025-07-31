@@ -116,7 +116,7 @@ const Navbar = () => {
                 <Link href = "/ContactUs" className="relative cursor-pointer after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-gray-50 after:transition-all after:duration-300 hover:after:w-full">Contact Us</Link>
             </li>
             <li>
-              {isloggedin && (<Link href = "/saveRecipe" className="relative cursor-pointer after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-gray-50 after:transition-all after:duration-300 hover:after:w-full">My Recipes</Link>)}
+              {isloggedin && (<Link href = "/SaveRecipe" className="relative cursor-pointer after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-gray-50 after:transition-all after:duration-300 hover:after:w-full">My Recipes</Link>)}
             </li>
           </ul>
 
