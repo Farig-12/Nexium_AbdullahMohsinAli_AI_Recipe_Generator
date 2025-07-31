@@ -61,7 +61,7 @@ const Favourite = () => {
               )}
         </div>
 
-        <div className="fixed z-30 top-[32rem] left-5">
+        <div className="fixed z-30 top-[36rem] md:top-[32rem] left-5">
           <Link href="/" passHref>
             <div className="flex items-center gap-2 shadow-xl rounded-xl px-4 py-2 w-fit cursor-pointer hover:shadow-2xl bg-gradient-to-r from-black/40 to-red-600 hover:from-red-600 hover:to-black/40 hover:scale-105 transition-colors duration-300 ease-in-out">
               <ArrowLeft className="text-white" />
