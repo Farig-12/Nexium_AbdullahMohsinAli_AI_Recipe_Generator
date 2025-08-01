@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { supabase } from "@/lib/SupabaseClient"
 import { useRouter } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 import { toast } from "sonner"
+import { useLoginContext } from "@/context"
 import Link from "next/link"
 
 const SignUp = () => {
@@ -13,6 +14,25 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const { isloggedin } = useLoginContext();
+
+  // Auth Guard
+      useEffect(() => {
+        if (isloggedin) {
+           setTimeout(() => {
+           router.push("/");
+           }, 1000);
+        }
+      }, [isloggedin]);
+      if (isloggedin) {
+          return (
+            <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-amber-600 to-orange-600">
+              <div className="bg-white text-red-600 rounded-xl px-6 py-4 shadow-lg text-lg font-mono text-center">
+                You are already logged in. Please log out to sign up again.
+              </div>
+            </div>
+        );
+      }
 
   const handleSubmit = async (e) => {
   e.preventDefault();
