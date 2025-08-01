@@ -23,16 +23,6 @@ const Favourite = () => {
          }, 1000);
       }
     }, [isloggedin]);
-    if (!isloggedin) {
-        return (
-          <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-amber-600 to-orange-600">
-            <div className="bg-white text-red-600 rounded-xl px-6 py-4 shadow-lg text-lg font-mono text-center">
-              Please log in to view your Favourite recipes.
-            </div>
-          </div>
-      );
-    }
-
 
     // Fetch user and favorite recipes on component mount
     useEffect(() => {
@@ -74,6 +64,16 @@ const Favourite = () => {
     const handleFavDeleteRender = (id) => {
     setRecipes((prev) => prev.filter((recipe) => recipe._id !== id));
   };
+
+      if (!isloggedin) {
+        return (
+          <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-amber-600 to-orange-600">
+            <div className="bg-white text-red-600 rounded-xl px-6 py-4 shadow-lg text-lg font-mono text-center">
+              Please log in to view your Favourite recipes.
+            </div>
+          </div>
+      );
+    }
 
     return (
       <>
